@@ -1,0 +1,54 @@
+name:                reflex-sdl2-test
+version:             0.1.0.0
+github:              "skyb0rg007/reflex-sdl2-test"
+license:             BSD3
+author:              "Skye Soss"
+maintainer:          "skyler.soss@gmail.com"
+copyright:           "2019 Skye Soss"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/reflex-sdl2-test#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- lens
+- mtl
+- reflex
+- reflex-sdl2
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  reflex-sdl2-test-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - reflex-sdl2-test
+
+tests:
+  reflex-sdl2-test-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - reflex-sdl2-test
